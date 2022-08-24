@@ -1,8 +1,8 @@
-import { initializeApp, getApps } from 'firebase/app'
+import { initializeApp, getApps, FirebaseOptions, FirebaseApp } from 'firebase/app'
 
 /**
  * Initializes or gets the Firebase app.
- * @param {FirebaseOptions} config Options to configure the app's services
+ * @param {FirebaseOptions?} config Options to configure the app's services
  * @returns {FirebaseApp} The initialized app.
  */
 export default function useFirebase(config) {
