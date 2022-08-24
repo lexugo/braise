@@ -5,7 +5,7 @@ import useSnapshot from './useSnapshot'
 
 function useCollection(path, ...constraints) {
 	const reference = useMemo(() => {
-		if (!constraints.every(Boolean)) return // An undefined contraint would yield an invalid query
+		if (!constraints.every(Boolean)) return // An undefined constraint would yield an invalid query
 		return query(collection(getFirestore(), path), ...constraints)
 	}, [path, ...constraints])
 

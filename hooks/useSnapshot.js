@@ -18,7 +18,7 @@ function log(reference) { // TODO: prevent logging in production
 		console.debug('Listening to document:', reference.path)
 
 	if (reference.type === 'query') {
-		const message = 'Listening to query: '
+		let message = 'Listening to query: '
 		if (reference._query.limit)
 			message += reference._query.limit + ' '
 		message += reference._query.path.segments.join('/')
