@@ -11,12 +11,11 @@ const google = new GoogleAuthProvider()
 export const signInWithGoogle = signInWith(google)
 function signInWith(provider) {
 	return async function(auth = getAuth()) {
-		if (await getRedirectResult(auth)) return // Successfully signed in
-		if (auth.currentUser) return // Already signed in
+		if (await getRedirectResult(auth)) return // Already signed in
 
-		await setPersistence(auth, browserLocalPersistence)
 		if (!auth.currentUser) {
 			console.debug('Signing in with', provider.providerId)
+			await setPersistence(auth, browserLocalPersistence)
 			await signInWithRedirect(auth, provider)
 		}
 	}
